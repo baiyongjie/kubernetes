@@ -1,0 +1,14 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: gluster-heketi-storageclass
+provisioner: kubernetes.io/glusterfs
+reclaimPolicy: Delete
+parameters:
+  resturl: "http://192.168.1.155:8080"
+  restauthenabled: "true"
+  restuser: "admin"
+  secretNamespace: "default"
+  secretName: "heketi-secret"
+  clusterid: "be9e1904fa1d17bb3fe6b28711ec2cc4"
+  volumetype: "disperse:2:1"

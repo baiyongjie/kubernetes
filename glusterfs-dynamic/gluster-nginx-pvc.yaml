@@ -1,0 +1,13 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: gluster-nginx-pvc
+  annotations:
+    pv.beta.kubernetes.io/gid: '107'
+spec:
+  storageClassName: gluster-heketi-storageclass
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 2Gi
